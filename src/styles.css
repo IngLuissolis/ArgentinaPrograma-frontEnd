@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+
+.logo-argentina-programa img{
+    width: 100px;
+}
+
+.foto-perfil img{
+    width: 100px;
+    border-radius: 50%;
+}
