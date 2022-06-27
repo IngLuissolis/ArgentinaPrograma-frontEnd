@@ -98,6 +98,16 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "ProyectoIntegradorV3:build:production",
+            "firebaseProject": "proyectoargentinaprogram-5318e",
+            "firebaseHostingSite": "proyectoargentinaprogram-5318e"
+          }
         }
       }
     }

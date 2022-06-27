@@ -1,0 +1,41 @@
+<div class="card">
+    <div class="card-header">
+        <td class="float-start">
+            <h2>Experiencia Laboral</h2>
+        </td>
+        <td class="float-end">
+            <button type="button" class="btn btn-edit" (click)="irRegistrarExperiencia()" [disabled]="estadoboton"><i class="bi bi-plus-square"></i></button>
+        </td>
+    </div>
+    <div class="card-body">
+        <table class="table table-striped">
+            <thead class="table-dark">
+                <tr>
+                    <th>Logo</th>
+                    <th>Nombre Empresa</th>
+                    <th>Fecha Ingreso</th>
+                    <th>Fecha Egreso</th>
+                    <th>Cargo</th>
+                    <th></th>
+                    <!--th>Botones</th-->
+                </tr>               
+            </thead>
+            <tbody>
+                <tr *ngFor="let experiencia of experiencias">
+                    <td><img alt="{{experiencia.id}}"></td>
+                    <td>{{experiencia.empresa}}</td>
+                    <td>{{experiencia.fechaIngreso}}</td>
+                    <td>{{experiencia.fechaEgreso}}</td>
+                    <td>{{experiencia.cargo}}</td>
+                    <td class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-edit" (click)="editarExperienciaPorId(experiencia.id)" [disabled]="estadoboton"><i class="bi bi-pencil-square"></i></button>
+                        
+                        <button class="btn btn-edit" (click)="eliminarExperienciaPorId(experiencia.id)" [disabled]="estadoboton"><i class="bi bi-trash"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+
+    </div>
+</div>

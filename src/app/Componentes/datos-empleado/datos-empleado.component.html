@@ -1,0 +1,18 @@
+<div class="card">
+    <img class="card-img-top" alt="...">
+    <div class="card-header">
+        <td class="float-start">
+            <h2>Datos Personales</h2>
+        </td>
+        <td class="align-middle; float-end">
+                <button (click)="actualizarDatos()" class="btn btn-edit" [disabled]="estadoboton"><i class="bi bi-pencil-square"></i></button>
+        </td>
+    </div>
+    <div class="card-body">
+        <tr>
+            <h5>Nombre y Apellido: </h5><p>{{empleado.nombre}} {{empleado.apellido}}</p>
+            <h5>Email: : </h5><p>{{empleado.email}}</p>
+        </tr>
+    </div>
+
+</div>

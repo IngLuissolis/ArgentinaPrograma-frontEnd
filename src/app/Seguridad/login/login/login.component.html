@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="login">
+        <div class="login-triangle"></div>
+        
+        <h2 class="login-header">Log in</h2>
+      
+        <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+          <p><input type="text" formControlName="usernameOrEmail" placeholder="Username"></p>
+          <p><input type="password" formControlName="password" placeholder="Password"></p>
+          <p><input type="submit" value="Iniciar Sesión"></p>
+          <p><input type="button" value="Cancelar" class="btn btn-danger" (click)="onCancelar()"></p>
+        </form>
+      </div>
+</div>

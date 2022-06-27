@@ -1,0 +1,67 @@
+<div class="col-md-6 offset-md-3">
+    <h3 class="text-center">Actualizar datos Experiencia</h3>
+    <form (ngSubmit)="onSubmit()" #experienciaForm="ngForm">
+        <div class="form-group">
+            <label>Logo: </label>
+            <input 
+            type="text" 
+            class="form-control"
+            id = "logo"
+            [(ngModel)]="experiencia.id"
+            name="logo"
+            #logo="ngModel"
+            >
+        </div>
+        <div class="form-group">
+            <label>Nombre Empresa: </label>
+            <input 
+            type="text" 
+            class="form-control"
+            id = "empresa"
+            [(ngModel)]="experiencia.empresa"
+            name="empresa"
+            #empresa="ngModel"
+            >
+        </div>
+        <div class="form-group">
+            <label>Fecha Ingreso: </label>
+            <input 
+            type="date"
+            class="form-control"
+            id = "fechaIngreso"
+            [(ngModel)]="experiencia.fechaIngreso"
+            name="fechaIngreso"
+            #fechaIngreso="ngModel"
+            >
+        </div>
+        <div class="form-group">
+            <label>Fecha Egreso: </label>
+            <input 
+            type="date"
+            class="form-control"
+            id = "fechaEgreso"
+            [(ngModel)]="experiencia.fechaEgreso"
+            name="fechaEgreso"
+            #fechaEgreso="ngModel"
+            >
+        </div>
+        <div class="form-group">
+            <label>Puesto: </label>
+            <input 
+            type="text" 
+            class="form-control"
+            id = "text"
+            [(ngModel)]="experiencia.cargo"
+            name="cargo"
+            #cargo="ngModel"
+            >
+        </div>
+        <p></p>
+        <button class="btn btn-success">
+            Guardar
+        </button>
+        <button class="btn btn-danger" (click)="irAPortfolio()">
+            Cancelar
+        </button>
+    </form>
+</div>
