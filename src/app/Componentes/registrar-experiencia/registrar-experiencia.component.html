@@ -1,5 +1,5 @@
 <div class="col-md-6 offset-md-3">
-    <h3 class="text-center">Nueva Experiencia</h3>
+    <h3 class="text-center m-2">Nueva Experiencia</h3>
     <form (ngSubmit)="onSubmit()" #experienciaForm="ngForm">
         <div class="form-group">
             <label>Logo: </label>
@@ -59,6 +59,9 @@
         <p></p>
         <button class="btn btn-success">
             Guardar
+        </button>
+        <button class="btn btn-danger m-2" (click)="irAPortfolio()">
+            Cancelar
         </button>
     </form>
 </div>
