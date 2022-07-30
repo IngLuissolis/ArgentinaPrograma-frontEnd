@@ -5,5 +5,6 @@ export class Proyecto {
     fechaProyecto: Date;
     url: string;
     proyectoDescripcion0: string;
+    proyectoDescripcion1: string;
     proyectoLogo: string;
 }

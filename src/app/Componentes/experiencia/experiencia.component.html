@@ -13,17 +13,19 @@
 
         <div class="card m-2 p-0" *ngFor="let experiencia of experiencias">
             <div class="d-flex justify-content-between align-items-center">
-                <div class="experiencia-logo m-2">
+                <div class="experiencia-logo m-2" *ngIf="experiencia.logo">
                     <img src="" class="img-fluid rounded-start" alt="{{experiencia.id}}">
                 </div>
                 <div class="m-0 p-0">
                     <div class="card-body p-1">
-                        <h3 class="card-title d-flex align-items-center m-0 p-1">{{experiencia.empresa}}
-                            [ {{experiencia.fechaIngreso}} / {{experiencia.fechaEgreso}} ]</h3>
+                        <div class="d-flex">
+                            <h3 class="card-title d-flex align-items-center m-0 p-1">{{experiencia.empresa}}</h3>
+                            <h5 class="card-title d-flex align-items-center m-0 p-1" style="color: grey">( {{experiencia.fechaIngreso}} / {{experiencia.fechaEgreso}} )</h5>
+                        </div>
                         <h4 class="m-0 p-1">{{experiencia.cargo}}</h4>
-                        <li class="m-2">{{experiencia.descripcion0}}</li>
-                        <li class="m-2">{{experiencia.descripcion1}}</li>
-                        <li class="m-2">{{experiencia.descripcion2}}</li>
+                        <li class="mx-3 my-2" *ngIf="experiencia.descripcion0">{{experiencia.descripcion0}}</li>
+                        <li class="m-3" *ngIf="experiencia.descripcion1">{{experiencia.descripcion1}}</li>
+                        <li class="m-3" *ngIf="experiencia.descripcion2">{{experiencia.descripcion2}}</li>
                     </div>
                 </div>
                 <div class="d-md-flex justify-content-md-end">

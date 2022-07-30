@@ -50,16 +50,13 @@ export class LoginComponent implements OnInit {
   //Envio de datos para recibir token
   onEnviar(event: Event){
 
-    //console.log("Form", this.form);
     //metodo preventDefault cancela el curso normal del evento onSubmit
     event.preventDefault;
 
     this.authenticationService.IniciarSesion(this.form.value).subscribe(
       dato => {
-        //console.log("Datos Recibidos desde server: ", dato); //JSON.stringify(dato)
         console.log("sessionStore.getItem: ",sessionStorage.getItem('currentUser'));
   
-
         this.router.navigate([`portfolio`]);
 
         const SesionStorage = JSON.parse(sessionStorage.getItem('currentUser')!);

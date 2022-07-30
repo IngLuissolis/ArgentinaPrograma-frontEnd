@@ -32,9 +32,14 @@ i {
     width: 75vw;
 }
 
-.experiencia .card-body:hover {
+.experiencia .card:hover {
     background: black;
     color: white;
+    border-radius: 0.2rem;
+}
+
+.experiencia .card:hover button {
+    background: white;
 }
 
 .experiencia-logo img {
@@ -42,7 +47,8 @@ i {
     border-radius: 0.2rem;
 }
 
-.skill .card-body:hover {
+.skill .card:hover {
     background: black;
     color: white;
+    border-radius: 0.2rem;
 }
