@@ -20,6 +20,13 @@ export class JwtClientService {
     return this.http.post<any>("https://proyecto-integrador-heroku-app.herokuapp.com/api/auth/iniciarSesion", request, {responseType: 'text' as 'json'}); 
   }
 
+  public welcome(token: string){
+    let tokenStr = 'Bearer ' + token;
+    const headers = new HttpHeaders().set("Authorization", tokenStr);
+    console.log("Headers: " + headers + ", TokenStr " + tokenStr);
+    return this.http.get("https://proyecto-integrador-heroku-app.herokuapp.com/api/auth/", {headers, responseType: 'text' as 'json'});
+  }
+
   public obtenerDatosEmpleadoToken(token: string) {
     let tokenStr = 'Bearer ' + token;
     const headers = new HttpHeaders().set("Authorization", tokenStr);
