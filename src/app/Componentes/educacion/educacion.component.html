@@ -1,1 +1,44 @@
-<p>educacion works!</p>
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center p-1 m-0">
+        <td class="d-flex m-0 p-0">
+            <i class="bi bi-mortarboard-fill mx-1"></i>
+            <h2 class="m-0 p-0">Educación</h2>
+        </td>
+        <td class="">
+            <button type="button" class="btn btn-edit" (click)="irRegistrarEducacion()" [disabled]="estadoboton">
+                <i class="bi bi-plus-square"></i>
+            </button>
+        </td>
+    </div>
+
+    <div class="card-body experiencia m-0 p-0">
+
+        <div class="card m-2 p-0" *ngFor="let educacion of educaciones">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="experiencia-logo m-2">
+                    <img src="" class="img-fluid rounded-start" alt="{{educacion.id}}">
+                </div>
+                <div class="m-0 p-0">
+                    <div class="card-body p-1">
+                        <h3 class="card-title d-flex align-items-center m-0 p-1">{{educacion.institucion}}
+                            [ {{educacion.fechaIngresoCurso}} / {{educacion.fechaEgresoCurso}} ]</h3>
+                        <h4 class="m-0 p-1">{{educacion.nombreCurso}}</h4>
+                        <li class="m-2">{{educacion.educacionDescripcion0}}</li>
+                        <li class="m-2">{{educacion.educacionDescripcion1}}</li>
+                        <li class="m-2">{{educacion.educacionDescripcion2}}</li>
+                    </div>
+                </div>
+                <div class="d-md-flex justify-content-md-end">
+                    <button class="btn btn-edit mx-2 p-1" (click)="editarEducacionPorId(educacion.id)" [disabled]="estadoboton">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                        
+                    <button class="btn btn-edit mx-2 p-1" (click)="eliminarEducacionPorId(educacion.id)" [disabled]="estadoboton">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

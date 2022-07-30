@@ -1,20 +1,44 @@
-<div class="card">
-    <div class="card-header">
-        <td class="float-start">
-            <h2>Datos Personales</h2>
+<div class="card datos-personales">
+    <div class="card-header d-flex justify-content-between m-0 p-1">
+        <td class="d-flex align-items-center">
+            <div class="mx-1">
+                <i class="bi bi-person-lines-fill" style="font-size: 1.8rem;"></i>
+            </div>
+            <h2 class="m-0">Datos Personales</h2>
         </td>
-        <td class="align-middle; float-end">
+        <td class="d-flex align-items-center">
                 <button (click)="actualizarDatos()" class="btn btn-edit" [disabled]="estadoboton"><i class="bi bi-pencil-square"></i></button>
         </td>
     </div>
-    <div class="card-body">
-        <div class="foto-perfil">
+    <div class="card-body d-flex justify-content-around m-0 p-2">
+
+        <div class="foto-perfil d-flex flex-column align-items-center">
             <img src="../../../assets/img/fotoperfil.jpg" class="" alt="Foto-Perfil">
+            <h2 class="text-center m-1">{{empleado.nombre}} {{empleado.apellido}}</h2>
+            <h3 class="text-center m-1">{{empleado.profesion}}</h3>
         </div>
-        <div>
-            <h5>Nombre y Apellido: </h5><p>{{empleado.nombre}} {{empleado.apellido}}</p>
-            <h5>Email: : </h5><p>{{empleado.email}}</p>
+
+        <div class="d-flex align-items-center flex-column ">
+
+            <div class="d-flex datos-contacto m-auto align-items-center">
+                <img src="../../../assets/img/location.png" class="m-1" alt="Ubicacion">
+                <h4 class="m-0">{{empleado.direccion}}</h4>
+            </div>
+
+            <div class="d-flex datos-contacto m-auto align-items-center">
+                <img src="../../../assets/img/mail.png" class="m-1" alt="Email">
+                <h4 class="m-0">{{empleado.email}}</h4>
+            </div>
+    
+            <div class="d-flex datos-contacto m-auto align-items-center">
+                <img src="../../../assets/img/cel-phone.png" class="m-1" alt="Celular">
+                <h4 class="m-0">{{empleado.celular}}</h4>
+            </div>
+
         </div>
+
+        
+
     </div>
 
 </div>

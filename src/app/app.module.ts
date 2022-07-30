@@ -22,7 +22,13 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
-
+import { RegistrarEducacionComponent } from './Componentes/registrar-educacion/registrar-educacion.component';
+import { ActualizarEducacionComponent } from './Componentes/actualizar-educacion/actualizar-educacion.component';
+import { RegistrarProyectoComponent } from './Componentes/registrar-proyecto/registrar-proyecto.component';
+import { ActualizarProyectoComponent } from './Componentes/actualizar-proyecto/actualizar-proyecto.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+import { RegistrarSkillComponent } from './Componentes/registrar-skill/registrar-skill.component';
+import { ActualizarSkillComponent } from './Componentes/actualizar-skill/actualizar-skill.component';
 
 @NgModule({
   declarations: [
@@ -38,10 +44,17 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     SecurityComponent,
     EducacionComponent,
     SkillsComponent,
-    ProyectosComponent
+    ProyectosComponent,
+    RegistrarEducacionComponent,
+    ActualizarEducacionComponent,
+    RegistrarProyectoComponent,
+    ActualizarProyectoComponent,
+    RegistrarSkillComponent,
+    ActualizarSkillComponent
   ],
   imports: [
     BrowserModule,
+    NgCircleProgressModule.forRoot({}),
     AppRoutingModule,
     HttpClientModule,
     FormsModule,

@@ -1,1 +1,48 @@
-<p>skills works!</p>
+<div class="card">
+    <div class="card-header d-flex justify-content-between align-items-center p-1 m-0">
+        <td class="d-flex m-0 p-0">
+            <i class="bi bi-briefcase-fill mx-1"></i>
+            <h2 class="m-0 p-0">Hard & Soft Skills</h2>
+        </td>
+        <td class="">
+            <button type="button" class="btn btn-edit" (click)="irRegistrarSkill()" [disabled]="estadoboton">
+                <i class="bi bi-plus-square"></i>
+            </button>
+        </td>
+    </div>
+
+    <div class="card-body d-flex flex-wrap justify-content-around align-items-center m-0 p-0">
+        <div class="card m-2 p-0" *ngFor="let skill of skills">
+            <div class="card-body 0 p-0">
+                <div class="d-md-flex justify-content-between">
+                    <div *ngIf="botonSkillEditar == true">
+                        <button class="btn btn-edit mx-2 p-1" (click)="editarSkillPorId(skill.id)" [disabled]="estadoboton" id="botonSkill">
+                            <i class="bi bi-pencil-square"></i>
+                        </button>
+                    </div>
+                    <div *ngIf="botonSkillEliminar == true">
+                        <button class="btn btn-edit mx-2 p-1" (click)="eliminarSkillPorId(skill.id)" [disabled]="estadoboton"
+                            id="botonSkill">
+                            <i class="bi bi-trash"></i>
+                        </button>
+                    </div>
+                </div>
+                <circle-progress
+                    [title]=skill.nombreSkill 
+                    [showUnits]="false" 
+                    [percent]=skill.valorSkill
+                    [showSubtitle]="false" 
+                    [radius]="80" 
+                    [outerStrokeWidth]="10" 
+                    [innerStrokeWidth]="5"
+                    [outerStrokeColor]="'#78C000'" 
+                    [innerStrokeColor]="'#C7E596'" 
+                    [animation]="true"
+                    [animationDuration]="600">
+                </circle-progress>
+
+            </div>
+        </div>
+
+    </div>
+</div>

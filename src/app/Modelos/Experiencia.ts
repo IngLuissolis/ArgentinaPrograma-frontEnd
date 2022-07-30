@@ -5,5 +5,8 @@ export class Experiencia{
     fechaIngreso: Date;
     fechaEgreso: Date;
     cargo: string;
-
+    descripcion0: string;
+    descripcion1: string;
+    descripcion2: string;
+    logo: string;
 }

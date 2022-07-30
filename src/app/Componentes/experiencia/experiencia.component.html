@@ -1,41 +1,42 @@
 <div class="card">
-    <div class="card-header">
-        <td class="float-start">
-            <h2>Experiencia Laboral</h2>
+    <div class="card-header d-flex justify-content-between align-items-center p-1 m-0">
+        <td class="d-flex m-0 p-0">
+            <i class="bi bi-briefcase-fill mx-1"></i>
+            <h2 class="m-0 p-0">Experiencia Laboral</h2>
         </td>
-        <td class="float-end">
+        <td class="">
             <button type="button" class="btn btn-edit" (click)="irRegistrarExperiencia()" [disabled]="estadoboton"><i class="bi bi-plus-square"></i></button>
         </td>
     </div>
-    <div class="card-body">
-        <table class="table table-striped">
-            <thead class="table-dark">
-                <tr>
-                    <th>Logo</th>
-                    <th>Nombre Empresa</th>
-                    <th>Fecha Ingreso</th>
-                    <th>Fecha Egreso</th>
-                    <th>Cargo</th>
-                    <th></th>
-                    <!--th>Botones</th-->
-                </tr>               
-            </thead>
-            <tbody>
-                <tr *ngFor="let experiencia of experiencias">
-                    <td><img alt="{{experiencia.id}}"></td>
-                    <td>{{experiencia.empresa}}</td>
-                    <td>{{experiencia.fechaIngreso}}</td>
-                    <td>{{experiencia.fechaEgreso}}</td>
-                    <td>{{experiencia.cargo}}</td>
-                    <td class="d-grid gap-2 d-md-flex justify-content-md-end">
-                        <button class="btn btn-edit" (click)="editarExperienciaPorId(experiencia.id)" [disabled]="estadoboton"><i class="bi bi-pencil-square"></i></button>
-                        
-                        <button class="btn btn-edit" (click)="eliminarExperienciaPorId(experiencia.id)" [disabled]="estadoboton"><i class="bi bi-trash"></i></button>
-                    </td>
-                </tr>
-            </tbody>
 
-        </table>
+    <div class="card-body experiencia m-0 p-0">
+
+        <div class="card m-2 p-0" *ngFor="let experiencia of experiencias">
+            <div class="d-flex justify-content-between align-items-center">
+                <div class="experiencia-logo m-2">
+                    <img src="" class="img-fluid rounded-start" alt="{{experiencia.id}}">
+                </div>
+                <div class="m-0 p-0">
+                    <div class="card-body p-1">
+                        <h3 class="card-title d-flex align-items-center m-0 p-1">{{experiencia.empresa}}
+                            [ {{experiencia.fechaIngreso}} / {{experiencia.fechaEgreso}} ]</h3>
+                        <h4 class="m-0 p-1">{{experiencia.cargo}}</h4>
+                        <li class="m-2">{{experiencia.descripcion0}}</li>
+                        <li class="m-2">{{experiencia.descripcion1}}</li>
+                        <li class="m-2">{{experiencia.descripcion2}}</li>
+                    </div>
+                </div>
+                <div class="d-md-flex justify-content-md-end">
+                    <button class="btn btn-edit mx-2 p-1" (click)="editarExperienciaPorId(experiencia.id)" [disabled]="estadoboton">
+                        <i class="bi bi-pencil-square"></i>
+                    </button>
+                        
+                    <button class="btn btn-edit mx-2 p-1" (click)="eliminarExperienciaPorId(experiencia.id)" [disabled]="estadoboton">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
 
     </div>
 </div>

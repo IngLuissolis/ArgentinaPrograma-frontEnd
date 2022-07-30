@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-lg bg-light mt-2">
-    <div class="container-fluid">
+<nav class="card navbar navbar-expand bg-light m-0 p-1" style="border-radius: 0.3rem;">
+    <div class="container-fluid m-0 p-0">
         <ul class="nav logo-argentina-programa">
-            <img src="../../../assets/img/LogoArgentinaPrograma.png" alt="Logo Argentina Programa">
+            <img src="../../../assets/img/LogoArgentinaPrograma.png" alt="Logo Argentina Programa" class="">
         </ul>
         <ul class="nav d-flex justify-content-end">
             <li class="nav-item">
@@ -10,8 +10,11 @@
             <li class="nav-item">
                 <button type="link" class="btn btn-edit"><i class="bi bi-linkedin"></i></button>
             </li>
-            <li>
-                <button type="button" class="btn btn-edit" (click)="irALogin()"><i class="bi bi-box-arrow-in-right"></i></button>
+            <li *ngIf="botonAbrirSesion == true">
+                <button type="button" class="btn btn-edit" id="botonAbrirSesion" (click)="irALogin()"><i class="bi bi-door-open"></i></button>
+            </li>
+            <li *ngIf="botonCerrarSesion == true">
+                <button type="button" class="btn btn-edit" id="botonCerrarSesion" (click)="cerrarSesion()"><i class="bi bi-door-closed-fill"></i></button>
             </li>
         </ul>
     </div>

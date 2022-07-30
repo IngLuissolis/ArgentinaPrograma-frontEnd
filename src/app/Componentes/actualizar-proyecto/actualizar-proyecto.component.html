@@ -1,0 +1,68 @@
+<div class="col-6 offset-3">
+    <h3 class="card-header text-center my-2">Actualizar datos Proyecto</h3>
+    <form (ngSubmit)="onSubmit()" #proyectoForm="ngForm">
+        <div class="form-group my-2">
+            <label>Logo: </label>
+            <input 
+            type="text" 
+            class="form-control"
+            id = "proyectoLogo"
+            [(ngModel)]="proyecto.proyectoLogo"
+            name="proyectoLogo"
+            #proyectoLogo="ngModel"
+            >
+        </div>
+        <div class="form-group my-2">
+            <label>Nombre Proyecto: </label>
+            <input 
+            type="text" 
+            class="form-control"
+            id = "nombreProyecto"
+            [(ngModel)]="proyecto.nombreProyecto"
+            name="nombreProyecto"
+            #nombreProyecto="ngModel"
+            >
+        </div>
+        <div class="form-group my-2">
+            <label>Cargo: </label>
+            <input 
+            type="text" 
+            class="form-control"
+            id = "url"
+            [(ngModel)]="proyecto.url"
+            name="url"
+            #url="ngModel"
+            >
+        </div>
+        <div class="form-group my-2">
+            <label>Fecha Proyecto: </label>
+            <input 
+            type="date"
+            class="form-control"
+            id = "fechaProyecto"
+            [(ngModel)]="proyecto.fechaProyecto"
+            name="fechaProyecto"
+            #fechaProyecto="ngModel"
+            >
+        </div>
+        <div class="form-group my-2">
+            <label>Descripcion Proyecto: </label>
+            <input 
+            type="text"
+            class="form-control"
+            id = "proyectoDescripcion0"
+            [(ngModel)]="proyecto.proyectoDescripcion0"
+            name="proyectoDescripcion0"
+            #proyectoDescripcion0="ngModel"
+            >
+        </div>
+        <div class="d-flex justify-content-center m-2">
+            <button class="btn btn-success m-2">
+                Guardar
+            </button>
+            <button class="btn btn-danger m-2" (click)="irAPortfolio()">
+                Cancelar
+            </button>
+        </div>
+    </form>
+</div>

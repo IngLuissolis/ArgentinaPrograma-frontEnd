@@ -68,7 +68,7 @@ export class ExperienciaComponent implements OnInit {
   eliminarExperienciaPorId(id: number){
     Swal.fire({
       title: 'Estas seguro?',
-      text: 'Confirma si deseas eliminar al empleado',
+      text: 'Confirma si deseas eliminar la experiencia',
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",

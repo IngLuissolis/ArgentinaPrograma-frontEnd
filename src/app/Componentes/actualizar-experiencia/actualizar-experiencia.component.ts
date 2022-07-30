@@ -13,7 +13,8 @@ export class ActualizarExperienciaComponent implements OnInit {
   id: number;
   experiencia: Experiencia = new Experiencia;
 
-  constructor(private router: Router, private route: ActivatedRoute, private experienciaService: ExperienciaService) { }
+  constructor(private router: Router, private route: ActivatedRoute, 
+    private experienciaService: ExperienciaService) { }
 
   ngOnInit(): void {
     this.id = this.route.snapshot.params['id'];

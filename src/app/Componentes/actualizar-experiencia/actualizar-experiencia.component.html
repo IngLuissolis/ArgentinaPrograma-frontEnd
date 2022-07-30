@@ -1,18 +1,18 @@
-<div class="col-md-6 offset-md-3">
-    <h3 class="text-center">Actualizar datos Experiencia</h3>
+<div class="col-6 offset-3">
+    <h3 class="card-header text-center my-2">Actualizar datos Experiencia</h3>
     <form (ngSubmit)="onSubmit()" #experienciaForm="ngForm">
-        <div class="form-group">
+        <div class="form-group my-2">
             <label>Logo: </label>
             <input 
             type="text" 
             class="form-control"
             id = "logo"
-            [(ngModel)]="experiencia.id"
+            [(ngModel)]="experiencia.logo"
             name="logo"
             #logo="ngModel"
             >
         </div>
-        <div class="form-group">
+        <div class="form-group my-2">
             <label>Nombre Empresa: </label>
             <input 
             type="text" 
@@ -23,7 +23,18 @@
             #empresa="ngModel"
             >
         </div>
-        <div class="form-group">
+        <div class="form-group my-2">
+            <label>Cargo: </label>
+            <input 
+            type="text" 
+            class="form-control"
+            id = "cargo"
+            [(ngModel)]="experiencia.cargo"
+            name="cargo"
+            #cargo="ngModel"
+            >
+        </div>
+        <div class="form-group my-2">
             <label>Fecha Ingreso: </label>
             <input 
             type="date"
@@ -34,7 +45,7 @@
             #fechaIngreso="ngModel"
             >
         </div>
-        <div class="form-group">
+        <div class="form-group my-2">
             <label>Fecha Egreso: </label>
             <input 
             type="date"
@@ -45,23 +56,46 @@
             #fechaEgreso="ngModel"
             >
         </div>
-        <div class="form-group">
-            <label>Puesto: </label>
+        <div class="form-group my-2">
+            <label>Descripcion 0: </label>
             <input 
-            type="text" 
+            type="text"
             class="form-control"
-            id = "text"
-            [(ngModel)]="experiencia.cargo"
-            name="cargo"
-            #cargo="ngModel"
+            id = "descripcion0"
+            [(ngModel)]="experiencia.descripcion0"
+            name="descripcion0"
+            #descripcion0="ngModel"
             >
         </div>
-        <p></p>
-        <button class="btn btn-success">
-            Guardar
-        </button>
-        <button class="btn btn-danger" (click)="irAPortfolio()">
-            Cancelar
-        </button>
+        <div class="form-group my-2">
+            <label>Descripcion 1: </label>
+            <input 
+            type="text"
+            class="form-control"
+            id = "descripcion1"
+            [(ngModel)]="experiencia.descripcion1"
+            name="descripcion1"
+            #descripcion1="ngModel"
+            >
+        </div>
+        <div class="form-group my-2">
+            <label>Descripcion 2: </label>
+            <input 
+            type="text"
+            class="form-control"
+            id = "descripcion2"
+            [(ngModel)]="experiencia.descripcion2"
+            name="descripcion2"
+            #descripcion2="ngModel"
+            >
+        </div>
+        <div class="d-flex justify-content-center m-2">
+            <button class="btn btn-success m-2">
+                Guardar
+            </button>
+            <button class="btn btn-danger m-2" (click)="irAPortfolio()">
+                Cancelar
+            </button>
+        </div>
     </form>
 </div>

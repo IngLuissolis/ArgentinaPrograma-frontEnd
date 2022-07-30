@@ -61,16 +61,14 @@ export class LoginComponent implements OnInit {
   
 
         this.router.navigate([`portfolio`]);
+
+        const SesionStorage = JSON.parse(sessionStorage.getItem('currentUser')!);
+
+        //habilita botones de edicion en portfolio
+        this.mensaje = false;
+        this.loginService.enviarMensaje(this.mensaje);
       }
       );
-
-    const SesionStorage = JSON.parse(sessionStorage.getItem('currentUser')!);
-    //console.log("SesionStorage: ", SesionStorage.tokenDeAcceso);
-
-    //habilita botones de edicion en portfolio
-    this.mensaje = false;
-    //console.log("login valorbotonacercade: " + this.mensaje);
-    this.loginService.enviarMensaje(this.mensaje);
 
   }
 
@@ -78,28 +76,4 @@ export class LoginComponent implements OnInit {
     this.router.navigate([`portfolio`]);
   }
 
-/*
-  onEnviar(event: Event) {
-    const usuarioLogin: loginInterface = {
-      usernameOrEmail: this.form.value.usernameOrEmail,
-      password: this.form.value.password,
-    }
-
-    let resp = this.service.generateToken(usuarioLogin);
-
-    resp.subscribe( data => {
-      const b = JSON.parse(data);
-      console.log("Token : " + b.tokenDeAcceso); //la magia esta aca, b.tokenDeAcceso contiene Token, respuesta del servidor en un JSON
-      sessionStorage.setItem("token", b.tokenDeAcceso);
-
-      this.router.navigate([`portfolio`]);
-
-      //habilita botones de edicion en portfolio
-      this.mensaje = false;
-      console.log("login valorbotonacercade: " + this.mensaje);
-      this.loginService.enviarMensaje(this.mensaje);
-      
-    });
-  }
-*/
 }
