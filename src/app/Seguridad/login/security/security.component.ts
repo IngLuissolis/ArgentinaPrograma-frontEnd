@@ -14,8 +14,6 @@ export class SecurityComponent implements OnInit {
   constructor(private service: JwtClientService, private login: LoginComponent) { }
 
   authRequest: any = {
-    //"usernameOrEmail": "luis",
-    //"password": "admin"
     "usernameOrEmail": this.login.usernameOrEmail,
     "password": this.login.password,
   };

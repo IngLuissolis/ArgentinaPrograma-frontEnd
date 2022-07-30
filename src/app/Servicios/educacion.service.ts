@@ -9,7 +9,8 @@ import { Educacion } from '../Modelos/Educacion';
 export class EducacionService {
 
   //Esta URL obtiene los datos educacion
-  private baseUrl = 'http://localhost:8080/api/v1/empleados/educaciones';
+  //private baseUrl = 'http://localhost:8080/api/v1/empleados/educaciones';
+  private baseUrl = 'https://proyecto-integrador-heroku-app.herokuapp.com/api/v1/empleados/educaciones';
 
   constructor(private httpClient: HttpClient) { }
 
