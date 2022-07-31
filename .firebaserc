@@ -1,12 +1,12 @@
 {
   "projects": {
-    "default": "proyectoargentinaprogram-5318e"
+    "default": "portfoliocvonline"
   },
   "targets": {
-    "proyectoargentinaprogram-5318e": {
+    "portfoliocvonline": {
       "hosting": {
         "ProyectoIntegradorV3": [
-          "proyectoargentinaprogram-5318e"
+          "portfoliocvonline"
         ]
       }
     }
