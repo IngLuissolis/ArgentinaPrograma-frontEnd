@@ -10,9 +10,11 @@
     border-radius: 0.5rem;
 }
 
-.foto-perfil img{
+/*Componente datos-empleado */
+.datos-empleado-foto-perfil img{
     width: 10rem;
     border-radius: 50%;
+    border: 0.3rem solid grey;
 }
 
 .datos-contacto img {
@@ -23,10 +25,10 @@ i {
     font-size: 1.5rem;
 }
 
+/*Componente experiencia */
 .experiencia-logo {
     width: 10vw;
 }
-
 
 .experiencia .card-body {
     width: 75vw;
@@ -45,7 +47,14 @@ i {
 .experiencia-logo img{
     width: 7rem;
     border-radius: 50%;
-    border: 0.3rem solid white;
+    border: 0.3rem solid grey;
+}
+
+/*Componente registrar-experiencia */
+.registrar-experiencia img {
+    width: 7rem;
+    border-radius: 50%;
+    border: 0.3rem solid grey;
 }
 
 .skill .card:hover {

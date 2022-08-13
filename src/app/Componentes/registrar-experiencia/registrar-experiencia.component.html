@@ -1,15 +1,13 @@
 <div class="col-6 offset-3">
     <h3 class="card-header text-center my-2">Nueva Experiencia</h3>
     <form (ngSubmit)="onSubmit()" #experienciaForm="ngForm">
-        
-        <div class="form-group my-2">
+        <div class="form-group registrar-experiencia my-2">
             <input 
             type='file' 
             (change)="readUrl($event)"
             >
             <img [src]="url">
         </div>
-        -->
         <div class="form-group my-2">
             <label class="">Nombre Empresa: </label>
             <input 
