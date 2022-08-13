@@ -42,9 +42,10 @@ i {
     background: white;
 }
 
-.experiencia-logo img {
-    width: 8rem;
-    border-radius: 0.2rem;
+.experiencia-logo img{
+    width: 7rem;
+    border-radius: 50%;
+    border: 0.3rem solid white;
 }
 
 .skill .card:hover {

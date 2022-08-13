@@ -7,5 +7,4 @@ export class Empleado {
     direccion: string;
     celular: string;
     email: string;
-
 }

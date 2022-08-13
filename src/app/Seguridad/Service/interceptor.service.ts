@@ -29,7 +29,7 @@ export class InterceptorService implements HttpInterceptor{
     }
     
     console.log("Interceptor esta corriendo ", JSON.stringify(currentUser));
-    console.log("req: ", req);
+    console.log("req Interceptor: ", req);
     return next.handle(req);
   }
 }

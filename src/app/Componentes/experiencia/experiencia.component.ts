@@ -1,10 +1,12 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SecurityContext } from '@angular/core';
 import { Router } from '@angular/router';
 import { Experiencia } from 'src/app/Modelos/Experiencia';
 import { ExperienciaService } from 'src/app/Servicios/experiencia.service';
 import { LoginServiceService } from 'src/app/Servicios/login-service.service';
 import Swal from 'sweetalert2';
+
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-experiencia',
@@ -15,31 +17,17 @@ export class ExperienciaComponent implements OnInit {
 
   experiencias: Experiencia[];
   estadoboton: boolean = true;
+  LogoSanitizado: any;
 
   constructor(private experienciaService: ExperienciaService, private router: Router, 
-    private httpClient: HttpClient, private loginService: LoginServiceService) { }
+    private httpClient: HttpClient, private loginService: LoginServiceService, 
+    private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
 
     this.accesoBotonEditar();
 
     this.obtenerListaDeExperiencias();
-
-/*    let httpHeaders: HttpHeaders = new HttpHeaders();
-
-    const token = sessionStorage.getItem("token");
-    console.log("get token ",token);
-
-    httpHeaders = httpHeaders.append("Authorization", "Bearer " + token);
-
-    this.httpClient.get<any>('http://localhost:8080/api/v1/experiencias',
-    {
-      headers: httpHeaders,
-      observe: 'response'
-    }).subscribe(dato =>{
-      this.experiencias = dato;
-    });
-*/
 
   }
 
@@ -52,8 +40,11 @@ export class ExperienciaComponent implements OnInit {
     this.experienciaService.obtenerListaDeExperiencias().subscribe(
       dato => {
         this.experiencias = dato;
+        
+        console.log("Lista de Experiencias",this.experiencias);
+
       }
-    )
+    );
   }
 
   irRegistrarExperiencia(){
@@ -63,7 +54,6 @@ export class ExperienciaComponent implements OnInit {
   editarExperienciaPorId(id: number){
     this.router.navigate(["actualizar-experiencia", id]);
   }
-
 
   eliminarExperienciaPorId(id: number){
     Swal.fire({
@@ -93,4 +83,16 @@ export class ExperienciaComponent implements OnInit {
     })
   }
 
+  //metodo convertir imagen recibida desde backend
+  createImageFromBlob(imagen: Blob): SafeHtml {
+    
+    let objectURL = 'data:image/jpeg;base64,' + imagen;
+
+    this.LogoSanitizado = (
+      this.sanitizer.sanitize(SecurityContext.HTML, 
+        this.sanitizer.bypassSecurityTrustHtml(objectURL)));
+        
+    return this.LogoSanitizado;
+    
+  }
 }

@@ -8,5 +8,5 @@ export class Experiencia{
     descripcion0: string;
     descripcion1: string;
     descripcion2: string;
-    logo: string;
+    logo: File;
 }
