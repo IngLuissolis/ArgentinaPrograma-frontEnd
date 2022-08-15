@@ -31,11 +31,31 @@ export class SkillService {
 
   //metodo para registrar Skill
   registrarSkill(skill: Skill):Observable<Object>{
-    return this.httpClient.post(`${this.baseUrl}`, skill);
+    let SkillFormData = new FormData();
+    SkillFormData = this.cargaFormData(skill);
+    
+    return this.httpClient.post(`${this.baseUrl}`, SkillFormData);
   }
 
   //metodo para editar Skill
   editarSkillporId(id: number, skill: Skill):Observable<Object>{
-    return this.httpClient.put<Skill>(`${this.baseUrl}/${id}`, skill);
+
+    let SkillFormData = new FormData();
+    SkillFormData = this.cargaFormData(skill);
+    
+    return this.httpClient.put(`${this.baseUrl}/${id}`, SkillFormData);
+  }
+
+  cargaFormData(skill: Skill): FormData {
+
+    const formData = new FormData();
+
+    var valorSkillStr = skill.valorSkill.toString();
+
+    formData.append("nombreSkill", skill.nombreSkill);
+    formData.append("valorSkill", valorSkillStr);
+    formData.append("skillLogo", skill.skillLogo);
+
+    return formData;
   }
 }

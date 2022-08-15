@@ -31,11 +31,40 @@ export class EducacionService {
 
   //metodo para registrar educacion
   registrarEducacion(educacion: Educacion):Observable<Object>{
-    return this.httpClient.post(`${this.baseUrl}`, educacion);
+    
+    let EducacionFormData = new FormData();
+
+    EducacionFormData = this.cargaFormData(educacion);
+
+    return this.httpClient.post(`${this.baseUrl}`, EducacionFormData );
+    //return this.httpClient.post(`${this.baseUrl}`, educacion);
   }
 
   //metodo para editar educacion
   editarEducacionporId(id: number, educacion: Educacion):Observable<Object>{
-    return this.httpClient.put<Educacion>(`${this.baseUrl}/${id}`, educacion);
+    let EducacionFormData = new FormData(); //
+
+    EducacionFormData = this.cargaFormData(educacion);
+
+    return this.httpClient.put(`${this.baseUrl}/${id}`, EducacionFormData);
+  }
+
+  cargaFormData(educacion: Educacion): FormData {
+
+    const formData = new FormData();
+
+    var fechaIngresoStr = educacion.fechaIngresoCurso.toString();
+    var fechaEgresoStr = educacion.fechaIngresoCurso.toString();
+
+    formData.append("institucion", educacion.institucion);
+    formData.append("nombreCurso", educacion.nombreCurso);
+    formData.append("fechaIngresoCursoStr", fechaIngresoStr);
+    formData.append("fechaEgresoCursoStr", fechaEgresoStr);
+    formData.append("educacionDescripcion0", educacion.educacionDescripcion0);
+    formData.append("educacionDescripcion1", educacion.educacionDescripcion1);
+    formData.append("educacionDescripcion2", educacion.educacionDescripcion2);
+    formData.append("educacionLogo", educacion.educacionLogo);
+
+    return formData;
   }
 }

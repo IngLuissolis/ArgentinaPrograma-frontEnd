@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SecurityContext } from '@angular/core';
 import { Router } from '@angular/router';
 import { Skill } from 'src/app/Modelos/Skill';
 import { LoginServiceService } from 'src/app/Servicios/login-service.service';
 import { SkillService } from 'src/app/Servicios/skill.service';
 import Swal from 'sweetalert2';
+
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-skills',
@@ -17,9 +19,11 @@ export class SkillsComponent implements OnInit {
   estadoboton: boolean = true;
   botonSkillEditar: boolean = false;
   botonSkillEliminar: boolean = false;
+  LogoSanitizado: any;
 
   constructor(private skillService: SkillService, private router: Router, 
-    private httpClient: HttpClient, private loginService: LoginServiceService) { }
+    private httpClient: HttpClient, private loginService: LoginServiceService, 
+    private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
 
@@ -79,5 +83,18 @@ export class SkillsComponent implements OnInit {
         })
       }
     })
+  }
+
+  //metodo convertir imagen recibida desde backend
+  createImageFromBlob(imagen: Blob): string {
+    
+    let objectURL = 'data:image/jpeg;base64,' + imagen;
+
+    this.LogoSanitizado = (
+      this.sanitizer.sanitize(SecurityContext.HTML, 
+        this.sanitizer.bypassSecurityTrustHtml(objectURL)))
+        
+    return this.LogoSanitizado.toString();
+    
   }
 }

@@ -5,7 +5,7 @@ import { Experiencia } from 'src/app/Modelos/Experiencia';
 import { ExperienciaService } from 'src/app/Servicios/experiencia.service';
 import { LoginServiceService } from 'src/app/Servicios/login-service.service';
 import Swal from 'sweetalert2';
-
+//import {CdkDragDrop, moveItemInArray} from '@angular/cdk/drag-drop';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
@@ -93,6 +93,11 @@ export class ExperienciaComponent implements OnInit {
         this.sanitizer.bypassSecurityTrustHtml(objectURL)));
         
     return this.LogoSanitizado;
-    
   }
+
+  /*
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.experiencias, event.previousIndex, event.currentIndex);
+  }
+  */
 }

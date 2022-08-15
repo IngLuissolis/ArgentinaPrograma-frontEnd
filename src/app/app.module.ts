@@ -26,9 +26,10 @@ import { RegistrarEducacionComponent } from './Componentes/registrar-educacion/r
 import { ActualizarEducacionComponent } from './Componentes/actualizar-educacion/actualizar-educacion.component';
 import { RegistrarProyectoComponent } from './Componentes/registrar-proyecto/registrar-proyecto.component';
 import { ActualizarProyectoComponent } from './Componentes/actualizar-proyecto/actualizar-proyecto.component';
-import { NgCircleProgressModule } from 'ng-circle-progress';
 import { RegistrarSkillComponent } from './Componentes/registrar-skill/registrar-skill.component';
 import { ActualizarSkillComponent } from './Componentes/actualizar-skill/actualizar-skill.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
+//import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { ActualizarSkillComponent } from './Componentes/actualizar-skill/actuali
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
+//    DragDropModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore())

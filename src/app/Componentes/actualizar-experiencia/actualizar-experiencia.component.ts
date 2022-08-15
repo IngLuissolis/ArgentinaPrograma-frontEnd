@@ -73,7 +73,6 @@ export class ActualizarExperienciaComponent implements OnInit {
         this.sanitizer.bypassSecurityTrustHtml(objectURL)));
         
     return this.LogoSanitizado;
-    
   }
 
 }

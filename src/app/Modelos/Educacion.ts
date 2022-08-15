@@ -8,6 +8,6 @@ export class Educacion {
     educacionDescripcion0: string;
     educacionDescripcion1: string;
     educacionDescripcion2: string;
-    educacionLogo: string;
+    educacionLogo: File;
 
 }

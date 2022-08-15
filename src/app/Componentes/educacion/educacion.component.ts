@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, SecurityContext } from '@angular/core';
 import { Router } from '@angular/router';
 import { Educacion } from 'src/app/Modelos/Educacion';
 import { EducacionService } from 'src/app/Servicios/educacion.service';
 import { LoginServiceService } from 'src/app/Servicios/login-service.service';
 import Swal from 'sweetalert2';
+
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-educacion',
@@ -15,9 +17,11 @@ export class EducacionComponent implements OnInit {
 
   educaciones: Educacion[];
   estadoboton: boolean = true;
+  LogoSanitizado: any;
 
   constructor(private educacionService: EducacionService, private router: Router,
-    private httpClient: HttpClient, private loginService: LoginServiceService) { }
+    private httpClient: HttpClient, private loginService: LoginServiceService, 
+    private sanitizer: DomSanitizer) { }
 
   ngOnInit(): void {
 
@@ -73,6 +77,19 @@ export class EducacionComponent implements OnInit {
         })
       }
     })
+  }
+
+  //metodo convertir imagen recibida desde backend
+  createImageFromBlob(imagen: Blob): SafeHtml {
+    
+    let objectURL = 'data:image/jpeg;base64,' + imagen;
+
+    this.LogoSanitizado = (
+      this.sanitizer.sanitize(SecurityContext.HTML, 
+        this.sanitizer.bypassSecurityTrustHtml(objectURL)));
+        
+    return this.LogoSanitizado;
+    
   }
 
 }

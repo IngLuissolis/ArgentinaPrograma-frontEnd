@@ -3,5 +3,5 @@ export class Skill {
     id: number;
     nombreSkill: string;
     valorSkill: number;
-    skillLogo: string;
+    skillLogo: File;
 }

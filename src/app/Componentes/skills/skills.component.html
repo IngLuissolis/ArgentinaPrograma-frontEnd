@@ -28,17 +28,21 @@
                     </div>
                 </div>
                 <circle-progress
+                    [imageSrc]=createImageFromBlob(skill.skillLogo)
+                    [imageHeight]="80"
+                    [imageWidth]="80"
+                    [showImage]="true"
                     [title]=skill.nombreSkill 
                     [showUnits]="false" 
                     [percent]=skill.valorSkill
-                    [showSubtitle]="false" 
+                    [showSubtitle]="false"
                     [radius]="80" 
                     [outerStrokeWidth]="10" 
                     [innerStrokeWidth]="5"
-                    [outerStrokeColor]="'#78C000'" 
-                    [innerStrokeColor]="'#C7E596'" 
+                    [outerStrokeColor]="'black'" 
+                    [innerStrokeColor]="'black'" 
                     [animation]="true"
-                    [animationDuration]="600">
+                    [animationDuration]="500">
                 </circle-progress>
 
             </div>

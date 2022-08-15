@@ -17,10 +17,10 @@
                 </button>
             </li>
             <li *ngIf="botonAbrirSesion == true">
-                <button type="button" class="btn btn-edit" id="botonAbrirSesion" (click)="irALogin()"><i class="bi bi-door-open"></i></button>
+                <button type="button" class="btn btn-edit" id="botonAbrirSesion" (click)="irALogin()"><i class="bi bi-door-closed-fill"></i></button>
             </li>
             <li *ngIf="botonCerrarSesion == true">
-                <button type="button" class="btn btn-edit" id="botonCerrarSesion" (click)="cerrarSesion()"><i class="bi bi-door-closed-fill"></i></button>
+                <button type="button" class="btn btn-edit" id="botonCerrarSesion" (click)="cerrarSesion()"><i class="bi bi-door-open"></i></button>
             </li>
         </ul>
     </div>

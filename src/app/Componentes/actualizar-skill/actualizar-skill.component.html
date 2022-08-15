@@ -1,17 +1,16 @@
 <div class="col-6 offset-3">
     <h3 class="card-header text-center my-2">Actualizar datos Skill</h3>
     <form (ngSubmit)="onSubmit()" #skillForm="ngForm">
-        <div class="form-group my-2">
+        <div class="form-group my-2 experiencia-logo">
             <label>Logo Skill: </label>
             <input 
             type="file"
             class="form-control"
             id = "skillLogo"
-            [(ngModel)]="skill.skillLogo"
             name="skillLogo"
-            #skillLogo="ngModel"
-            [disabled]="true"
+            (change)="readUrl($event)"
             >
+            <img [src]="url" class="img-fluid">
         </div>
         <div class="form-group my-2">
             <label>Nombre Skill: </label>
