@@ -112,7 +112,6 @@
       }
     }
   },
-  "defaultProject": "ProyectoIntegradorV3",
   "cli": {
     "analytics": false
   }

@@ -7,6 +7,7 @@ import { SkillService } from 'src/app/Servicios/skill.service';
 import Swal from 'sweetalert2';
 
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-skills',
@@ -96,5 +97,16 @@ export class SkillsComponent implements OnInit {
         
     return this.LogoSanitizado.toString();
     
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.skills, event.previousIndex, event.currentIndex);
+  }
+
+  convertirStringvalorSkill(valorSkill: number): string {
+    
+    let valorSkillStr = valorSkill.toString();
+
+    return valorSkillStr;
   }
 }

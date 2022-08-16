@@ -29,7 +29,7 @@ import { ActualizarProyectoComponent } from './Componentes/actualizar-proyecto/a
 import { RegistrarSkillComponent } from './Componentes/registrar-skill/registrar-skill.component';
 import { ActualizarSkillComponent } from './Componentes/actualizar-skill/actualizar-skill.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
-//import { DragDropModule } from '@angular/cdk/drag-drop';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 
 @NgModule({
   declarations: [
@@ -60,7 +60,7 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-//    DragDropModule,
+    DragDropModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore())

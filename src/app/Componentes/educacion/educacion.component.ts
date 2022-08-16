@@ -7,6 +7,7 @@ import { LoginServiceService } from 'src/app/Servicios/login-service.service';
 import Swal from 'sweetalert2';
 
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-educacion',
@@ -88,8 +89,11 @@ export class EducacionComponent implements OnInit {
       this.sanitizer.sanitize(SecurityContext.HTML, 
         this.sanitizer.bypassSecurityTrustHtml(objectURL)));
         
-    return this.LogoSanitizado;
-    
+    return this.LogoSanitizado;   
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.educaciones, event.previousIndex, event.currentIndex);
   }
 
 }

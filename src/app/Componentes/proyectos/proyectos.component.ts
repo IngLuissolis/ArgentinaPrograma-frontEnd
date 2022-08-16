@@ -1,3 +1,4 @@
+import { CdkDragDrop, moveItemInArray } from '@angular/cdk/drag-drop';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -73,6 +74,10 @@ export class ProyectosComponent implements OnInit {
         })
       }
     })
+  }
+
+  drop(event: CdkDragDrop<string[]>) {
+    moveItemInArray(this.proyectos, event.previousIndex, event.currentIndex);
   }
 
 }

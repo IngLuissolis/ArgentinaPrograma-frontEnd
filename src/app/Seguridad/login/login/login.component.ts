@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { LoginServiceService } from 'src/app/Servicios/login-service.service';
 import { loginInterface } from '../../models/loginInterface';
@@ -15,10 +15,10 @@ import { JwtClientService } from '../../Service/jwt-client.service';
 })
 export class LoginComponent implements OnInit {
 
-  form:FormGroup;
+  form:UntypedFormGroup;
   mensaje: boolean;
 
-  constructor(private FormBuilder: FormBuilder, private authenticationService: AuthenticationService, private router:Router, 
+  constructor(private FormBuilder: UntypedFormBuilder, private authenticationService: AuthenticationService, private router:Router, 
     private httpClient: HttpClient, private service: JwtClientService, private loginService: LoginServiceService) {
 
     //Inicializamos formulario

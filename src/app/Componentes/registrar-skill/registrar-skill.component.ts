@@ -12,7 +12,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 export class RegistrarSkillComponent implements OnInit {
 
   skill: Skill = new Skill();
-  url: any;
+  url: any = "";
   LogoSanitizado: any;
 
   constructor(private skillService: SkillService, private router: Router, 
@@ -47,9 +47,6 @@ export class RegistrarSkillComponent implements OnInit {
   
       reader.readAsDataURL(event.target.files[0]);
       this.skill.skillLogo = event.target.files[0];
-
-      console.log("Funcion readUrl");
-      console.log(event.target.files[0]);
 
     }
   }

@@ -63,6 +63,13 @@ i {
     border-radius: 0.2rem;
 }
 
+/*Componente registrar-skill */
+.registrar-skill-logo {
+    width: 7rem;
+    border-radius: 50%;
+    border: 0.2rem solid black;
+}
+
 /*Drag and Drop*/
 .cdk-drag-preview {
     box-sizing: border-box;

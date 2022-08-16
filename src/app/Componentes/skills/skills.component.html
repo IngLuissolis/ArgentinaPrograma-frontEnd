@@ -11,42 +11,48 @@
         </td>
     </div>
 
-    <div class="card-body d-flex flex-wrap justify-content-around align-items-center m-0 p-0">
-        <div class="card m-2 p-0" *ngFor="let skill of skills">
-            <div class="card-body 0 p-0">
-                <div class="d-md-flex justify-content-between">
-                    <div *ngIf="botonSkillEditar == true">
-                        <button class="btn btn-edit mx-2 p-1" (click)="editarSkillPorId(skill.id)" [disabled]="estadoboton" id="botonSkill">
-                            <i class="bi bi-pencil-square"></i>
-                        </button>
+    <div class="card-body m-0 p-0">
+        <div class="d-flex flex-row flex-wrap justify-content-center align-items-center" cdkDropList cdkDropListOrientation="horizontal" (cdkDropListDropped)="drop($event)">
+            <div class="card m-2 p-0" *ngFor="let skill of skills" cdkDrag>
+                <div class="card-body 0 p-0">
+                    <div class="d-md-flex justify-content-between">
+                        <div *ngIf="botonSkillEditar == true">
+                            <button class="btn btn-edit mx-2 p-1" (click)="editarSkillPorId(skill.id)" [disabled]="estadoboton"
+                                id="botonSkill">
+                                <i class="bi bi-pencil-square"></i>
+                            </button>
+                        </div>
+                        <div *ngIf="botonSkillEliminar == true">
+                            <button class="btn btn-edit mx-2 p-1" (click)="eliminarSkillPorId(skill.id)"
+                                [disabled]="estadoboton" id="botonSkill">
+                                <i class="bi bi-trash"></i>
+                            </button>
+                        </div>
                     </div>
-                    <div *ngIf="botonSkillEliminar == true">
-                        <button class="btn btn-edit mx-2 p-1" (click)="eliminarSkillPorId(skill.id)" [disabled]="estadoboton"
-                            id="botonSkill">
-                            <i class="bi bi-trash"></i>
-                        </button>
-                    </div>
-                </div>
-                <circle-progress
-                    [imageSrc]=createImageFromBlob(skill.skillLogo)
-                    [imageHeight]="80"
-                    [imageWidth]="80"
+                    <circle-progress 
+                    [imageSrc]=createImageFromBlob(skill.skillLogo) 
+                    [imageHeight]="75" 
+                    [imageWidth]="75"
                     [showImage]="true"
-                    [title]=skill.nombreSkill 
-                    [showUnits]="false" 
+                    [title]=skill.nombreSkill
+                    [showTitle]="true"
                     [percent]=skill.valorSkill
-                    [showSubtitle]="false"
-                    [radius]="80" 
-                    [outerStrokeWidth]="10" 
-                    [innerStrokeWidth]="5"
-                    [outerStrokeColor]="'black'" 
-                    [innerStrokeColor]="'black'" 
-                    [animation]="true"
-                    [animationDuration]="500">
-                </circle-progress>
-
+                    [subtitle]=convertirStringvalorSkill(skill.valorSkill)
+                    [showSubtitle]="true"
+                    [radius]="70" 
+                    [outerStrokeColor]="'#4882c2'" 
+                    [outerStrokeGradientStopColor]="'#53a9ff'"
+                    [innerStrokeColor]="'#e7e8ea'" 
+                    [animation]="true" 
+                    [animationDuration]="500"
+                    
+                    [outerStrokeGradient]="true"
+                    [outerStrokeWidth]="10"
+                    [innerStrokeWidth]="10"
+                    [space]="-10">
+                    </circle-progress>
+                </div>
             </div>
         </div>
-
     </div>
 </div>
