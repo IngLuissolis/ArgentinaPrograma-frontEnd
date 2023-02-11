@@ -14,17 +14,17 @@ export class JwtClientService {
   token: any;
   //Esta URL obtiene los datos del empleado 
   //private baseUrl = 'http://localhost:8080/api/v1/empleados';
-  private baseUrl = 'https://proyecto-integrador-heroku-app.herokuapp.com/api/v1/empleados';
+  private baseUrl = 'https://lesapp.onrender.com/api/v1/empleados';
 
   public generateToken(request: any){
-    return this.http.post<any>("https://proyecto-integrador-heroku-app.herokuapp.com/api/auth/iniciarSesion", request, {responseType: 'text' as 'json'}); 
+    return this.http.post<any>("https://lesapp.onrender.com/api/auth/iniciarSesion", request, {responseType: 'text' as 'json'}); 
   }
 
   public welcome(token: string){
     let tokenStr = 'Bearer ' + token;
     const headers = new HttpHeaders().set("Authorization", tokenStr);
     console.log("Headers: " + headers + ", TokenStr " + tokenStr);
-    return this.http.get("https://proyecto-integrador-heroku-app.herokuapp.com/api/auth/", {headers, responseType: 'text' as 'json'});
+    return this.http.get("https://lesapp.onrender.com/api/auth/", {headers, responseType: 'text' as 'json'});
   }
 
   public obtenerDatosEmpleadoToken(token: string) {

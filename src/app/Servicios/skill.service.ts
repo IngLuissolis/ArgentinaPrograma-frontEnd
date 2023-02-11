@@ -10,7 +10,7 @@ export class SkillService {
 
   //Esta URL obtiene los datos de proyectos
   //private baseUrl = 'http://localhost:8080/api/v1/empleados/skills';
-  private baseUrl = 'https://proyecto-integrador-heroku-app.herokuapp.com/api/v1/empleados/skills';
+  private baseUrl = 'https://lesapp.onrender.com/api/v1/empleados/skills';
 
   constructor(private httpClient: HttpClient) { }
 
