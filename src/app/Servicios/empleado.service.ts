@@ -10,7 +10,8 @@ export class EmpleadoService {
 
   //Esta URL obtiene los datos del empleado 
   //private baseUrl = 'http://localhost:8080/api/v1/empleados';
-  private baseUrl = 'https://proyecto-integrador-heroku-app.herokuapp.com/api/v1/empleados';
+  //private baseUrl = 'https://proyecto-integrador-heroku-app.herokuapp.com/api/v1/empleados';
+  private baseUrl = 'https://lesapp.onrender.com/api/v1/empleados';
 
   constructor(private httpClient: HttpClient) { }
 
